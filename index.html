@@ -12,14 +12,16 @@ p {
 </head>
 <body>
 <h1>!!!PGS Joining Count Down!!!</h1>
-<p id="demo">Hi Princi-People!</p>
-
+<p id="demo"></p>
+<p id="demo1">Hi Princi-People!</p>
+<p id="demo2"></p>
+<p id="demo3"></p>
 <script>
 
 
 // Set the date we're counting down to
-var countDownDate = new Date("Nov 10, 2020 10:30:00").getTime();
-
+var countDownDate9 = new Date("Nov 9, 2020 10:30:00").getTime();
+var countDownDate10 = new Date("Nov 10, 2020 10:30:00").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -27,22 +29,39 @@ var x = setInterval(function() {
   var now = new Date().getTime();
     
   // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+  var distance9 = countDownDate9 - now;
+  var distance10 = countDownDate10 - now;
     
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  // Time calculations9 for days, hours, minutes and seconds
+  var days9 = Math.floor(distance9 / (1000 * 60 * 60 * 24));
+  var hours9 = Math.floor((distance9 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes9 = Math.floor((distance9 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds9 = Math.floor((distance9 % (1000 * 60)) / 1000);
     
+  // Time calculations10 for days, hours, minutes and seconds
+  var days10 = Math.floor(distance10 / (1000 * 60 * 60 * 24));
+  var hours10 = Math.floor((distance10 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes10 = Math.floor((distance10 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds10 = Math.floor((distance10 % (1000 * 60)) / 1000);
+
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s to go!";
+	document.getElementById("demo").innerHTML= "For 9 Nov";
+  document.getElementById("demo1").innerHTML = days9 + "d " + hours9 + "h "
+  + minutes9 + "m " + seconds9 + "s to go!";
     
+	document.getElementById("demo2").innerHTML= "For 10 Nov";
+  document.getElementById("demo3").innerHTML = days10 + "d " + hours10 + "h "
+  + minutes10 + "m " + seconds10 + "s to go!";
+
   // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+  if (distance9 < 0) {
+    //clearInterval(x);
+    document.getElementById("demo1").innerHTML = "EXPIRED";
+  }
+
+if (distance10 < 0) {
+    //clearInterval(x);
+    document.getElementById("demo3").innerHTML = "EXPIRED";
   }
 }, 1000);
 </script>
